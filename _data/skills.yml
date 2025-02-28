@@ -1,0 +1,23 @@
+- name: Data Science
+  icon: fas fa-chart-bar
+
+- name: Machine Learning
+  icon: fas fa-brain
+
+- name: Python
+  icon: fab fa-python
+
+- name: Data Visualization
+  icon: fas fa-chart-pie
+
+- name: Statistical Analysis
+  icon: fas fa-calculator
+
+- name: Deep Learning
+  icon: fas fa-network-wired
+
+- name: Research & Publication
+  icon: fas fa-file-alt
+
+- name: Public Speaking
+  icon: fas fa-microphone

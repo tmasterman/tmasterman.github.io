@@ -1,0 +1,10 @@
+# _data/research_papers.yml
+- title: "Your Research Paper Title 1"
+  description: "Brief description of your first research paper."
+  image: "/assets/images/research-1.jpg"
+  link: "https://arxiv.org/abs/your-paper-id-1"
+
+- title: "Your Research Paper Title 2"
+  description: "Brief description of your second research paper."
+  image: "/assets/images/research-2.jpg"
+  link: "https://arxiv.org/abs/your-paper-id-2"

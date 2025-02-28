@@ -1,0 +1,14 @@
+- icon: fab fa-linkedin
+  link: https://linkedin.com/in/your-linkedin
+
+- icon: fab fa-github
+  link: https://github.com/tmasterman
+
+- icon: fab fa-twitter
+  link: https://twitter.com/your-twitter
+
+- icon: fab fa-medium
+  link: https://medium.com/@your-medium
+
+- icon: fas fa-envelope
+  link: mailto:your-email@example.com

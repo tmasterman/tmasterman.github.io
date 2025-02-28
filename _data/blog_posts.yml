@@ -1,0 +1,19 @@
+- title: "Understanding Neural Networks: A Beginner's Guide"
+  description: "A comprehensive introduction to neural networks for beginners."
+  image: "/assets/images/blog-1.jpg"
+  link: "https://towardsdatascience.com/your-blog-post-1"
+
+- title: "Data Visualization Techniques That Actually Work"
+  description: "Effective strategies for presenting data in a meaningful way."
+  image: "/assets/images/blog-2.jpg"
+  link: "https://towardsdatascience.com/your-blog-post-2"
+
+- title: "The Future of AI: Trends to Watch"
+  description: "An exploration of emerging trends in artificial intelligence."
+  image: "/assets/images/blog-3.jpg"
+  link: "https://towardsdatascience.com/your-blog-post-3"
+
+- title: "Machine Learning in Healthcare: Case Studies"
+  description: "Real-world applications of ML in the healthcare industry."
+  image: "/assets/images/blog-4.jpg"
+  link: "https://towardsdatascience.com/your-blog-post-4"

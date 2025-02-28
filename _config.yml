@@ -1,0 +1,49 @@
+# Site settings
+theme: minima  # This will ensure the basic Jekyll theme is available
+title: Tula Masterman
+email: tula@themastermans.com
+description: >-
+  Personal portfolio for Tula Masterman, featuring research papers, 
+  videos, blog posts, and more.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://tmasterman.github.io" # your site's production URL
+twitter_username: tula.masterman
+github_username:  tmasterman
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Custom Settings
+subtitle: Data Scientist & Researcher
+experience_description: >-
+  I have over X years of experience working in data science and machine learning. 
+  My expertise includes developing predictive models, conducting statistical analyses, 
+  and implementing AI solutions for real-world problems. I've worked with companies 
+  in various industries including healthcare, finance, and technology, helping them 
+  leverage their data to drive insights and make better decisions.
+
+contact_description: >-
+  I'm always interested in new opportunities, collaborations, or just connecting with 
+  like-minded professionals. Feel free to reach out through any of the platforms below.
+
+# Collections
+# collections:
+#   research:
+#     output: true
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
