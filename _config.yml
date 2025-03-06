@@ -17,13 +17,13 @@ plugins:
   - jekyll-seo-tag
 
 # Custom Settings
-subtitle: Data Scientist & Researcher
+subtitle: Applied AI Leader, Researcher, and Data Scientist
 experience_description: >-
-  I have over X years of experience working in data science and machine learning. 
-  My expertise includes developing predictive models, conducting statistical analyses, 
-  and implementing AI solutions for real-world problems. I've worked with companies 
-  in various industries including healthcare, finance, and technology, helping them 
-  leverage their data to drive insights and make better decisions.
+  I have over 5 years of experience working in data science and AI, including 3 years leading research and innovation initiatives. My expertise includes developing custom predictive models and implementing Generative AI solutions that have delivered millions in savings for clients across industries.
+
+  As an AI leader at Neudesic (an IBM company), I bridge the gap between cutting-edge research and practical applications, guiding technical teams and executives in leveraging AI technologies to achieve strategic goals. My published research has been cited in over 30 academic publications, while my articles are frequently featured as Editor's Picks in Towards Data Science. Additionally, I create educational videos on YouTube and LinkedIn that explain AI concepts and trends in under 10 minutes, with my combined content reaching an audience of 10,000+ industry professionals.
+  
+  What sets me apart is my ability to translate complex AI concepts into tangible business value, combining technical expertise with leadership skills and a passion for sharing knowledge that helps organizations navigate the rapidly evolving AI landscape.
 
 contact_description: >-
   I'm always interested in new opportunities, collaborations, or just connecting with 

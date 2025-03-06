@@ -1,23 +1,29 @@
-- name: Data Science
-  icon: fas fa-chart-bar
-
-- name: Machine Learning
+- name: Generative AI & LLMs
   icon: fas fa-brain
 
+- name: AI Agents & RAG
+  icon: fas fa-robot
+
+- name: Data Science & Analytics
+  icon: fas fa-chart-bar
+
+- name: Deep Learning
+  icon: fas fa-project-diagram
+  
 - name: Python
   icon: fab fa-python
 
-- name: Data Visualization
-  icon: fas fa-chart-pie
+- name: AI Solution Architecture
+  icon: fas fa-sitemap
 
-- name: Statistical Analysis
-  icon: fas fa-calculator
+- name: Executive Advisory
+  icon: fas fa-handshake
 
-- name: Deep Learning
-  icon: fas fa-network-wired
-
-- name: Research & Publication
+- name: Research & Technical Writing
   icon: fas fa-file-alt
+
+- name: Innovation Leadership
+  icon: fas fa-lightbulb
 
 - name: Public Speaking
   icon: fas fa-microphone

@@ -1,7 +1,7 @@
 ---
 layout: portfolio
 title: Tula Masterman
-subtitle: Data Scientist & Researcher
+subtitle: AI Solutions Leader & Applied Data Scientist
 ---
 
-I'm a data scientist and researcher with a passion for machine learning, AI, and data visualization. With experience in both academic research and industry applications, I focus on developing innovative solutions to complex problems.
+AI leader and applied researcher translating cutting-edge generative AI technology into business value. Passionate about making complex technologies actionable through research publications, articles, and educational videos.
