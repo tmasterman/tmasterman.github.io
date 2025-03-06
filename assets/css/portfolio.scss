@@ -83,21 +83,42 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
+  padding: 0;
   
   .site-nav {
     display: flex;
-    justify-content: flex-end;
-    padding: 15px 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
     
-    .nav-link {
-      margin-left: 20px;
-      color: $primary-color;
-      text-decoration: none;
-      font-weight: 600;
-      transition: $transition;
+    .site-brand {
+      .brand-link {
+        color: $primary-color;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.2rem;
+        transition: $transition;
+        
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+    }
+    
+    .nav-links {
+      display: flex;
       
-      &:hover {
-        color: $secondary-color;
+      .nav-link {
+        margin-left: 20px;
+        color: $primary-color;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: $transition;
+        
+        &:hover, &.active {
+          color: $secondary-color;
+        }
       }
     }
   }
