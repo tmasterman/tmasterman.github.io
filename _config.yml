@@ -17,17 +17,16 @@ plugins:
   - jekyll-seo-tag
 
 # Custom Settings
-subtitle: Applied AI Leader, Researcher, and Data Scientist
+subtitle: AI Solutions Leader & Applied Data Scientist
 experience_description: >-
   I have over 5 years of experience working in data science and AI, including 3 years leading research and innovation initiatives. My expertise includes developing custom predictive models and implementing Generative AI solutions that have delivered millions in savings for clients across industries.
 
-  As an AI leader at Neudesic (an IBM company), I bridge the gap between cutting-edge research and practical applications, guiding technical teams and executives in leveraging AI technologies to achieve strategic goals. My published research has been cited in over 30 academic publications, while my articles are frequently featured as Editor's Picks in Towards Data Science. Additionally, I create educational videos on YouTube and LinkedIn that explain AI concepts and trends in under 10 minutes, with my combined content reaching an audience of 10,000+ industry professionals.
+  As an AI leader at Neudesic (an IBM company), I bridge the gap between cutting-edge research and practical applications, guiding technical teams and executives in leveraging AI technologies to achieve strategic goals. My research published on arXiv has been cited in 30+ technical papers, while my articles are frequently featured as Editor's Picks in Towards Data Science. Additionally, I create educational videos on YouTube and LinkedIn that explain AI concepts and trends in under 10 minutes, with my combined content reaching an audience of 10,000+ industry professionals.
   
   What sets me apart is my ability to translate complex AI concepts into tangible business value, combining technical expertise with leadership skills and a passion for sharing knowledge that helps organizations navigate the rapidly evolving AI landscape.
 
 contact_description: >-
-  I'm always interested in new opportunities, collaborations, or just connecting with 
-  like-minded professionals. Feel free to reach out through any of the platforms below.
+  I'm always interested in connecting with like-minded professionals. Feel free to reach out through any of the platforms below.
 
 # Collections
 # collections:

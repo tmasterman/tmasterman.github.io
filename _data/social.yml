@@ -1,14 +1,17 @@
 - icon: fab fa-linkedin
-  link: https://linkedin.com/in/your-linkedin
+  link: https://www.linkedin.com/in/tula-masterman/
 
 - icon: fab fa-github
   link: https://github.com/tmasterman
 
 - icon: fab fa-twitter
-  link: https://twitter.com/your-twitter
+  link: https://x.com/tulamasterman
 
 - icon: fab fa-medium
-  link: https://medium.com/@your-medium
+  link: https://medium.com/@tula.masterman
+
+- icon: fas fa-newspaper
+  link: https://towardsdatascience.com/author/tula-masterman/
 
 - icon: fas fa-envelope
-  link: mailto:your-email@example.com
+  link: mailto:tula.masterman@gmail.com

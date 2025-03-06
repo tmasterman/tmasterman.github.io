@@ -1,10 +1,10 @@
 # _data/research_papers.yml
-- title: "Your Research Paper Title 1"
-  description: "Brief description of your first research paper."
-  image: "/assets/images/research-1.jpg"
-  link: "https://arxiv.org/abs/your-paper-id-1"
+- title: "Lightweight Safety Classification Using Pruned Language Models"
+  description: "This paper introduces Layer Enhanced Classification (LEC), a novel technique that outperforms GPT-4o and specialized models in content safety and prompt injection detection using fewer than 100 training examples with dramatically reduced computational requirements. The approach combines the computational efficiency of a streamlined Penalized Logistic Regression Classifier with the robust language understanding of an LLM. The results demonstrate that incredibly small transformer models (0.5B parameters) are robust feature extractors for classification tasks."
+  image: "/assets/images/lec-graphic.png"
+  link: "https://arxiv.org/abs/2412.13435"
 
-- title: "Your Research Paper Title 2"
-  description: "Brief description of your second research paper."
-  image: "/assets/images/research-2.jpg"
-  link: "https://arxiv.org/abs/your-paper-id-2"
+- title: "The Landscape of Emerging AI Agent Architectures for Reasoning, Planning, and Tool Calling: A Survey"
+  description: "This comprehensive survey examines cutting-edge AI agent implementations, focusing on their capabilities for reasoning, planning, and tool execution. The paper maps out both single-agent and multi-agent architectures, identifies key design patterns, and provides critical insights for effective agent system development."
+  image: "/assets/images/agent-paper-graphic.png"
+  link: "https://arxiv.org/abs/2404.11584"
