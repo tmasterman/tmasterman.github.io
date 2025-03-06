@@ -14,12 +14,32 @@ $dark-bg: #1a202c;
 $transition: all 0.3s ease;
 
 // General Styles
+// body {
+//   font-family: 'Raleway', sans-serif;
+//   color: $text-color;
+//   line-height: 1.6;
+//   margin: 0;
+//   padding: 0;
+// }
+
+// Font settings
 body {
   font-family: 'Raleway', sans-serif;
   color: $text-color;
   line-height: 1.6;
   margin: 0;
   padding: 0;
+}
+
+// h1, h2, h3, h4, h5, h6, .section-title, .site-brand .brand-link {
+//   font-family: 'Montserrat', sans-serif;
+//   font-weight: 700;
+// }
+
+h1, h2, h3, h4, h5, h6, .section-title, .site-brand .brand-link {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .portfolio-container {
