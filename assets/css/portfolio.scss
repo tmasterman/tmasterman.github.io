@@ -109,7 +109,7 @@ h1, h2, h3, h4, h5, h6, .section-title, .site-brand .brand-link {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: 6px 0;
     
     .site-brand {
       .brand-link {
@@ -146,7 +146,7 @@ h1, h2, h3, h4, h5, h6, .section-title, .site-brand .brand-link {
 
 // Section 1: About
 .about-section {
-  padding: 80px 20px;
+  padding: 60px 20px; //80px 20px;
   background: linear-gradient(to right, 
                               color.adjust($primary-color, $lightness: 40%), 
                               color.adjust($primary-color, $lightness: 45%));
@@ -455,11 +455,11 @@ h1, h2, h3, h4, h5, h6, .section-title, .site-brand .brand-link {
   }
 }
 
-// Footer
+// Footer - More Compact
 .site-footer {
   background-color: $dark-bg;
   color: $light-color;
   text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
+  padding: 4px; /* Reduced from 20px */
+  font-size: 0.85rem; /* Reduced from 0.9rem */
 }
