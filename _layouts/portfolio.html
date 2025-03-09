@@ -39,6 +39,25 @@ layout: default
     </div>
   </section>
 
+  <!-- Section 4: YouTube Videos -->
+  <section id="videos" class="videos-section">
+    <div class="section-container">
+      <h2 class="section-title">Videos</h2>
+      <div class="video-slider">
+        <div class="video-container">
+          {% for video in site.data.videos %}
+          <div class="video-item">
+            <div class="video-embed">
+              <iframe src="https://www.youtube.com/embed/{{ video.id }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <h3 class="video-title">{{ video.title }}</h3>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>  
+
 <!-- Section 3: Research Papers -->
 <section id="research" class="research-section">
     <div class="section-container">
@@ -56,25 +75,6 @@ layout: default
           </div>
         </div>
         {% endfor %}
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 4: YouTube Videos -->
-  <section id="videos" class="videos-section">
-    <div class="section-container">
-      <h2 class="section-title">Videos</h2>
-      <div class="video-slider">
-        <div class="video-container">
-          {% for video in site.data.videos %}
-          <div class="video-item">
-            <div class="video-embed">
-              <iframe src="https://www.youtube.com/embed/{{ video.id }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <h3 class="video-title">{{ video.title }}</h3>
-          </div>
-          {% endfor %}
-        </div>
       </div>
     </div>
   </section>
