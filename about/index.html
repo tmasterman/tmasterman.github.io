@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tula Masterman</title>
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/assets/css/portfolio.css">
+  
+  <!-- Google Fonts -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+  <!-- jQuery for scrolling features -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>About | Tula Masterman</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="About" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Personal portfolio for Tula Masterman, featuring research papers, videos, blog posts, and more." />
+<meta property="og:description" content="Personal portfolio for Tula Masterman, featuring research papers, videos, blog posts, and more." />
+<link rel="canonical" href="https://tmasterman.github.io/about/" />
+<meta property="og:url" content="https://tmasterman.github.io/about/" />
+<meta property="og:site_name" content="Tula Masterman" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="About" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Personal portfolio for Tula Masterman, featuring research papers, videos, blog posts, and more.","headline":"About","name":"Tula Masterman","url":"https://tmasterman.github.io/about/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+  <header class="site-header">
+  <div class="section-container">
+    <nav class="site-nav">
+      <div class="site-brand">
+        <a href="#" class="brand-link">Tula Masterman</a>
+      </div>
+      <div class="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#videos" class="nav-link">Videos</a>
+        <a href="#research" class="nav-link">Research</a>
+        <a href="#blog" class="nav-link">Blog</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+  
+  <main class="page-content">
+    <div class="section-container">
+  <h1>About</h1>
+  <p>This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at <a href="https://jekyllrb.com/">jekyllrb.com</a></p>
+
+<p>You can find the source code for Minima at GitHub:
+<a href="https://github.com/jekyll">jekyll</a> /
+<a href="https://github.com/jekyll/minima">minima</a></p>
+
+<p>You can find the source code for Jekyll at GitHub:
+<a href="https://github.com/jekyll">jekyll</a> /
+<a href="https://github.com/jekyll/jekyll">jekyll</a></p>
+
+
+</div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="section-container">
+      <p>&copy; 2025 Tula Masterman.</p>
+    </div>
+  </footer>
+  
+  <!-- Custom JavaScript -->
+  <script>
+    // Smooth scrolling for navigation links
+    $(document).ready(function() {
+      $('.nav-link').on('click', function(e) {
+        e.preventDefault();
+        const targetSection = $(this).attr('href');
+        $('html, body').animate({
+          scrollTop: $(targetSection).offset().top - 70
+        }, 800);
+      });
+      
+      // Highlight active nav item based on scroll position
+      $(window).scroll(function() {
+        const scrollPos = $(window).scrollTop();
+        
+        $('section').each(function() {
+          const sectionTop = $(this).offset().top - 100;
+          const sectionBottom = sectionTop + $(this).outerHeight();
+          const sectionId = $(this).attr('id');
+          
+          if (scrollPos >= sectionTop && scrollPos <= sectionBottom) {
+            $('.nav-link').removeClass('active');
+            $(`.nav-link[href="#${sectionId}"]`).addClass('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
