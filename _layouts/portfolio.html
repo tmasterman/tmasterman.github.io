@@ -1,18 +1,19 @@
 ---
 layout: default
 ---
-
-<div class="portfolio-container">
-  <!-- Section 1: Header with profile picture and intro -->
+<div class ="portfolio-container">
+  <!-- Section 1: About -->
   <section id="about" class="about-section">
-    <div class="profile-container">
-      <div class="profile-image">
-        <img src="{{ site.baseurl }}/assets/images/profile-picture.jpg" alt="{{ site.title }}">
-      </div>
-      <div class="profile-text">
-        <h1>{{ site.title }}</h1>
-        <p class="subtitle">{{ site.subtitle }}</p>
-        <div class="about-text">{{ content }}</div>
+    <div class="section-container">
+      <div class="profile-container">
+        <div class="profile-image">
+          <img src="{{ site.baseurl }}/assets/images/profile-picture.jpg" alt="{{ site.title }}">
+        </div>
+        <div class="profile-text">
+          <h1>{{ site.title }}</h1>
+          <p class="subtitle">{{ site.subtitle }}</p>
+          <p>{{ content }}</p>
+        </div>
       </div>
     </div>
   </section>
