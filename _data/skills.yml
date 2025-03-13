@@ -7,7 +7,7 @@
 - name: Data Science & Analytics
   icon: fas fa-chart-bar
 
-- name: Deep Learning
+- name: Deep Learning (NLP & CV)
   icon: fas fa-project-diagram
   
 - name: Python
