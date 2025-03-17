@@ -526,20 +526,49 @@ h1, h2, h3, h4, h5, h6, .section-title, .site-brand .brand-link {
 
 // Mobile responsiveness - all styles for screens under 768px
 @media (max-width: 767px) {
+  // // Navigation adjustments
+  // .site-header .site-nav {
+  //   height: 50px; // Even more compact on mobile
+    
+  //   .site-brand .brand-link {
+  //     font-size: 1rem;
+  //   }
+    
+  //   .nav-links .nav-link {
+  //     font-size: 0.8rem;
+  //     margin-left: 10px;
+  //     padding: 6px 4px;
+  //   }
+  // }
+
   // Navigation adjustments
   .site-header .site-nav {
-    height: 50px; // Even more compact on mobile
+    flex-direction: column; // Stack vertically on very small screens
+    height: auto; // Allow height to adjust based on content
+    padding: 2px 0;
     
-    .site-brand .brand-link {
-      font-size: 1rem;
+    .site-brand {
+      padding-left: 0;
+      margin-bottom: 2px;
+      
+      .brand-link {
+        font-size: 1rem;
+      }
     }
     
-    .nav-links .nav-link {
-      font-size: 0.8rem;
-      margin-left: 10px;
-      padding: 6px 4px;
+    .nav-links {
+      padding-right: 0;
+      width: 100%;
+      justify-content: center;
+      
+      .nav-link {
+        font-size: 0.8rem;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 6px 4px;
+      }
     }
-  }
+  }  
   
   // Section container adjustments
   .section-container {
@@ -577,5 +606,16 @@ h1, h2, h3, h4, h5, h6, .section-title, .site-brand .brand-link {
   // Reduce section title margin on mobile
   .section-title {
     margin-bottom: 20px; // Reduced from 25px
+  }
+}
+
+// Extra small screens (phones in portrait)
+@media (max-width: 374px) {
+  .site-header .site-nav .nav-links {
+    flex-wrap: wrap; // Allow wrapping on very small screens
+    
+    .nav-link {
+      margin: 2px 4px;
+    }
   }
 }
