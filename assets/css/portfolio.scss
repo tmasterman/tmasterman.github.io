@@ -49,6 +49,7 @@ h1, h2, h3, h4, h5, h6, .section-title, .site-brand .brand-link {
   color: $primary-color;
   margin-bottom: 25px; // Reduced from 40px
   position: relative;
+  //font-size: 2rem;
   
   &:after {
     content: '';
@@ -219,6 +220,9 @@ h1, h2, h3, h4, h5, h6, .section-title, .site-brand .brand-link {
     h1 {
       color: $primary-color;
       margin-bottom: 5px;
+      // font-size: 2.7 rem;
+      // font-weight: 700;
+      // line-height: 1.2;
     }
     
     .subtitle {
@@ -526,22 +530,6 @@ h1, h2, h3, h4, h5, h6, .section-title, .site-brand .brand-link {
 
 // Mobile responsiveness - all styles for screens under 768px
 @media (max-width: 767px) {
-  // // Navigation adjustments
-  // .site-header .site-nav {
-  //   height: 50px; // Even more compact on mobile
-    
-  //   .site-brand .brand-link {
-  //     font-size: 1rem;
-  //   }
-    
-  //   .nav-links .nav-link {
-  //     font-size: 0.8rem;
-  //     margin-left: 10px;
-  //     padding: 6px 4px;
-  //   }
-  // }
-
-  // Navigation adjustments
   .site-header .site-nav {
     flex-direction: column; // Stack vertically on very small screens
     height: auto; // Allow height to adjust based on content
