@@ -1,0 +1,9 @@
+<nav>
+  <a href="{{ '/' | relative_url }}" class="nav-logo">Tula <em>Masterman</em></a>
+  <ul class="nav-links">
+    <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>About</a></li>
+    <li><a href="{{ '/writing' | relative_url }}"{% if page.url contains '/writing' %} class="active"{% endif %}>Writing</a></li>
+    <li><a href="{{ '/videos' | relative_url }}"{% if page.url contains '/videos' %} class="active"{% endif %}>Videos</a></li>
+    <li><a href="{{ '/research' | relative_url }}"{% if page.url contains '/research' %} class="active"{% endif %}>Research</a></li>
+  </ul>
+</nav>

@@ -1,0 +1,24 @@
+---
+layout: default
+title: Videos
+---
+
+<div class="page-header">
+  <h1 class="page-title">Videos</h1>
+  <div class="page-rule"></div>
+</div>
+
+<div class="video-grid">
+  {% for video in site.data.videos %}
+  <a href="https://www.youtube.com/watch?v={{ video.id }}" class="video-card" target="_blank" rel="noopener">
+    <div class="video-thumb">
+      <img src="https://img.youtube.com/vi/{{ video.id }}/maxresdefault.jpg" alt="{{ video.title }}" loading="lazy">
+      <div class="video-play-icon">▶</div>
+    </div>
+    <div class="video-info">
+      <h3 class="video-title">{{ video.title }}</h3>
+      {% if video.description %}<p class="video-desc">{{ video.description }}</p>{% endif %}
+    </div>
+  </a>
+  {% endfor %}
+</div>

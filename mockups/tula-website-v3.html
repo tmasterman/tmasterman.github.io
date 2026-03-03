@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tula Masterman</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory: #FDFAF6;
+    --cream: #F7F1E8;
+    --burgundy: #722F37;
+    --gold: #B8965A;
+    --dark: #2A1F1F;
+    --gray: #8A7B70;
+    --border: #E8DDD0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--ivory);
+    color: var(--dark);
+  }
+
+  /* ── NAV ── */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 64px;
+    border-bottom: 1px solid var(--border);
+    background: var(--ivory);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--dark);
+    text-decoration: none;
+  }
+  .nav-logo em { color: var(--burgundy); font-style: italic; }
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gray);
+    text-decoration: none;
+  }
+  .nav-links a:hover { color: var(--dark); }
+  .nav-links a.active { color: var(--dark); border-bottom: 1px solid var(--burgundy); padding-bottom: 2px; }
+
+  /* ── HERO ── */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 88vh;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-left {
+    padding: 80px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--border);
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 96px;
+    line-height: 1.0;
+    margin-bottom: 40px;
+  }
+  .hero-name span { display: block; }
+  .hero-name .first { color: var(--dark); }
+  .hero-name .last { color: var(--burgundy); font-style: italic; }
+  .hero-tagline {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--gray);
+    line-height: 1.7;
+    max-width: 420px;
+    margin-bottom: 56px;
+  }
+  .hero-tagline strong {
+    color: var(--dark);
+    font-weight: 400;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--burgundy);
+    color: var(--ivory);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 18px 32px;
+    text-decoration: none;
+    width: fit-content;
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--burgundy);
+    border: 1px solid var(--burgundy);
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+  }
+
+  .hero-right {
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-photo-frame {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 75%;
+    overflow: hidden;
+  }
+  .hero-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #D9CFC4 0%, #C9BFB4 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: #A89A8E;
+    text-transform: uppercase;
+  }
+  .hero-photo-caption {
+    position: relative;
+    z-index: 2;
+    padding-top: 32px;
+  }
+  .hero-photo-caption .quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--dark);
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  .hero-photo-caption .quote-source {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ── INTRO STRIP ── */
+  .intro-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid var(--border);
+  }
+  .intro-item {
+    padding: 48px 56px;
+    border-right: 1px solid var(--border);
+  }
+  .intro-item:last-child { border-right: none; }
+  .intro-item .item-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .intro-item .item-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--dark);
+    line-height: 1.5;
+  }
+
+  /* ── FEATURED ARTICLE ── */
+  .featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+  }
+  .featured-image {
+    background: var(--cream);
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: #A89A8E;
+    text-transform: uppercase;
+    border-right: 1px solid var(--border);
+  }
+  .featured-content {
+    padding: 72px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .tag-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+  .tag-featured {
+    color: var(--burgundy);
+  }
+  .tag-sep { color: var(--border); }
+  .featured-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: var(--dark);
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+  .featured-excerpt {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 40px;
+    border-left: 3px solid var(--burgundy);
+    padding-left: 24px;
+  }
+
+  /* ── ARTICLE GRID ── */
+  .section-header {
+    padding: 56px 64px 32px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--dark);
+  }
+  .section-link {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    text-decoration: none;
+  }
+  .article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid var(--border);
+  }
+  .article-card {
+    padding: 48px 56px;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .article-card:last-child { border-right: none; }
+  .card-category {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+  }
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--dark);
+    line-height: 1.3;
+  }
+  .card-excerpt {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--gray);
+    line-height: 1.7;
+    flex: 1;
+  }
+  .card-meta {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--border);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── SIDEBAR LAYOUT for recent posts ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    border-bottom: 1px solid var(--border);
+  }
+  .col-main { border-right: 1px solid var(--border); }
+  .col-sidebar { background: var(--cream); }
+
+  .sidebar-header {
+    padding: 40px 48px 24px;
+    border-bottom: 1px solid var(--border);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .sidebar-list { }
+  .sidebar-item {
+    padding: 28px 48px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .sidebar-item:last-child { border-bottom: none; }
+  .sidebar-item .s-cat {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+  }
+  .sidebar-item .s-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--dark);
+    line-height: 1.4;
+  }
+
+  /* Main col article list */
+  .article-list-item {
+    padding: 48px 64px;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 48px;
+    align-items: start;
+  }
+  .ali-content {}
+  .ali-cat {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    margin-bottom: 12px;
+  }
+  .ali-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--dark);
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+  .ali-excerpt {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--gray);
+    line-height: 1.75;
+  }
+  .ali-image {
+    background: var(--cream);
+    height: 140px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #C0B5AC;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    padding: 72px 64px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .footer-brand .f-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--ivory);
+    margin-bottom: 12px;
+  }
+  .footer-brand .f-name em { color: #C17A84; font-style: italic; }
+  .footer-brand .f-tag {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--gray);
+    letter-spacing: 0.08em;
+  }
+  .footer-col-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .footer-links a {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--gray);
+    text-decoration: none;
+  }
+  .footer-bottom {
+    background: var(--dark);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 24px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-bottom span {
+    font-size: 11px;
+    font-weight: 300;
+    color: #5A4F4F;
+    letter-spacing: 0.08em;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Tula <em>Masterman</em></a>
+  <ul class="nav-links">
+    <li><a href="#" class="active">About</a></li>
+    <li><a href="#">Writing</a></li>
+    <li><a href="#">Videos</a></li>
+    <li><a href="#">Research</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Applied AI Solutions Architect</div>
+    <div class="hero-name">
+      <span class="first">Tula</span>
+      <span class="last">Masterman</span>
+    </div>
+    <p class="hero-tagline">
+      I research and build AI systems and share what I find along the way.
+    </p>
+    <div class="hero-ctas">
+      <a href="#" class="btn">Read the latest →</a>
+      <a href="#" class="btn btn-outline">About me</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-frame">
+      <div class="hero-photo-placeholder">Your photo here</div>
+    </div>
+    <div class="hero-photo-caption">
+      <div class="quote">Making AI approachable — one concept at a time.</div>
+    </div>
+  </div>
+</section>
+
+  <div class="intro-strip">
+  <div class="intro-item">
+    <div class="item-label">What I write about</div>
+    <div class="item-text">AI in practice, how to apply it, and what it's like to navigate a fast-moving field.</div>
+  </div>
+  <div class="intro-item">
+    <div class="item-label">Where to find me</div>
+    <div class="item-text">Substack · LinkedIn · YouTube · @tulamasterman</div>
+  </div>
+  <div class="intro-item">
+    <div class="item-label">About me</div>
+    <div class="item-text">Swimmer · Reader · Portia's dog mom.</div>
+  </div>
+</div>
+
+<!-- FEATURED ARTICLE -->
+<section class="featured">
+  <div class="featured-image">Article header image</div>
+  <div class="featured-content">
+    <div class="tag-row">
+      <span class="tag tag-featured">Featured</span>
+      <span class="tag-sep">·</span>
+      <span class="tag">AI in Practice</span>
+    </div>
+    <div class="featured-headline">The Real Reason Your AI Agent Keeps Failing</div>
+    <div class="featured-excerpt">
+      Most agentic systems don't break because the model isn't good enough. They break because the architecture around the model doesn't match how the model reasons.
+    </div>
+    <a href="#" class="btn" style="width:fit-content">Read the article →</a>
+  </div>
+</section>
+
+<!-- RECENT WRITING -->
+<div class="two-col">
+  <div class="col-main">
+    <div class="section-header" style="padding: 40px 64px 32px;">
+      <div class="section-title">Recent Writing</div>
+      <a href="#" class="section-link">All posts →</a>
+    </div>
+
+    <div class="article-list-item">
+      <div class="ali-content">
+        <div class="ali-cat">AI in Practice</div>
+        <div class="ali-title">The Skill No One Talks About in AI Roles</div>
+        <div class="ali-excerpt">Staying oriented in a fast-moving field isn't about reading everything. It's about knowing what to ignore.</div>
+      </div>
+      <div class="ali-image">image</div>
+    </div>
+
+    <div class="article-list-item">
+      <div class="ali-content">
+        <div class="ali-cat">AI in Practice</div>
+        <div class="ali-title">What Tool Calling Actually Means (and Why It Matters)</div>
+        <div class="ali-excerpt">Everyone talks about function calling like it's magic. Here's what's actually happening under the hood.</div>
+      </div>
+      <div class="ali-image">image</div>
+    </div>
+
+    <div class="article-list-item">
+      <div class="ali-content">
+        <div class="ali-cat">Navigating a Fast-Moving Field</div>
+        <div class="ali-title">How I Evaluate New AI Frameworks Before Recommending Them</div>
+        <div class="ali-excerpt">A practical checklist I've developed from building production agent systems over the past two years.</div>
+      </div>
+      <div class="ali-image">image</div>
+    </div>
+  </div>
+
+  <div class="col-sidebar">
+    <div class="sidebar-header">Also on the site</div>
+    <div class="sidebar-list">
+      <div class="sidebar-item">
+        <div class="s-cat">Life in Full</div>
+        <div class="s-title">Why I Swam the Catalina Channel</div>
+      </div>
+      <div class="sidebar-item">
+        <div class="s-cat">Research</div>
+        <div class="s-title">Lightweight Safety Classification Using Pruned Language Models</div>
+      </div>
+      <div class="sidebar-item">
+        <div class="s-cat">Navigating a Fast-Moving Field</div>
+        <div class="s-title">Negotiating Comp in AI Roles</div>
+      </div>
+      <div class="sidebar-item">
+        <div class="s-cat">Tula's Digest</div>
+        <div class="s-title">What I'm Reading, Watching & Building — Feb 24</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <div class="f-name">Tula <em>Masterman</em></div>
+    <div class="f-tag">Making AI approachable.</div>
+  </div>
+  <div>
+    <div class="footer-col-label">Explore</div>
+    <ul class="footer-links">
+      <li><a href="#">Writing</a></li>
+      <li><a href="#">Videos</a></li>
+      <li><a href="#">Research</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </div>
+  <div>
+    <div class="footer-col-label">Find me</div>
+    <ul class="footer-links">
+      <li><a href="#">LinkedIn</a></li>
+      <li><a href="#">Substack</a></li>
+      <li><a href="#">YouTube</a></li>
+      <li><a href="#">@tulamasterman</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>© 2026 Tula Masterman</span>
+  <span>Making AI approachable.</span>
+</div>
+
+</body>
+</html>
