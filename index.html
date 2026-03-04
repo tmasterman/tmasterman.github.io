@@ -1,0 +1,123 @@
+---
+layout: default
+title: Tula Masterman
+---
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Applied AI Solutions Architect</div>
+    <div class="hero-name">
+      <span class="first">Tula</span>
+      <span class="last">Masterman</span>
+    </div>
+    <p class="hero-tagline">
+      I research and build AI systems and share what I find along the way.
+    </p>
+    <div class="hero-ctas">
+      <a href="{{ '/writing' | relative_url }}" class="btn">Read the latest →</a>
+      <a href="{{ '/about' | relative_url }}" class="btn btn-outline">About me</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-frame">
+      <img src="{{ '/assets/images/profile-picture-optimized.jpg' | relative_url }}" alt="Tula Masterman">
+    </div>
+    <div class="hero-photo-caption">
+      <div class="quote">Making AI approachable — one concept at a time.</div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO STRIP -->
+<div class="intro-strip" id="about">
+  <div class="intro-item">
+    <div class="item-label">What I write about</div>
+    <div class="item-text">AI in practice, lessons learned, and what it's like to navigate a fast-moving field.</div>
+  </div>
+  <div class="intro-item">
+    <div class="item-label">Where to find me</div>
+    <div class="item-text">
+      <a href="https://www.linkedin.com/in/tula-masterman/" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="https://tulamasterman.substack.com" target="_blank" rel="noopener">Substack</a> ·
+      <a href="https://medium.com/@tula.masterman" target="_blank" rel="noopener">Medium</a> ·
+      <a href="https://x.com/tulamasterman" target="_blank" rel="noopener">X</a>
+    </div>
+  </div>
+  <div class="intro-item">
+    <div class="item-label">About me</div>
+    <div class="item-text">Swimmer · Reader · Portia's dog mom.</div>
+  </div>
+</div>
+
+<!-- FEATURED ARTICLE -->
+{% assign featured_post = site.posts | where: "featured", true | first %}
+{% if featured_post %}
+{% if featured_post.external_url %}{% assign featured_link = featured_post.external_url %}{% assign featured_target = 'target="_blank" rel="noopener"' %}{% else %}{% assign featured_link = featured_post.url | relative_url %}{% assign featured_target = '' %}{% endif %}
+<section class="featured">
+  <div class="featured-image">
+    {% if featured_post.image %}
+    <img src="{{ featured_post.image | relative_url }}" alt="{{ featured_post.title }}">
+    {% endif %}
+  </div>
+  <div class="featured-content">
+    <div class="tag-row">
+      <span class="tag tag-featured">Featured</span>
+      <span class="tag-sep">·</span>
+      <span class="tag">{{ featured_post.category }}</span>
+    </div>
+    <div class="featured-headline">{{ featured_post.title }}</div>
+    <div class="featured-excerpt">{{ featured_post.description }}</div>
+    <a href="{{ featured_link }}" class="btn" {{ featured_target }}>Read the article →</a>
+  </div>
+</section>
+{% endif %}
+
+<!-- RECENT WRITING -->
+{% assign non_featured = site.posts | where_exp: "p", "p.featured != true" %}
+{% assign recent_posts = non_featured | slice: 0, 3 %}
+{% assign older_posts = non_featured | slice: 3, 5 %}
+
+<div class="two-col">
+  <div class="col-main">
+    <div class="section-header">
+      <div class="section-title">Recent Writing</div>
+      <a href="{{ '/writing' | relative_url }}" class="section-link">All posts →</a>
+    </div>
+
+    {% for post in recent_posts %}
+    {% if post.external_url %}{% assign post_link = post.external_url %}{% assign post_target = 'target="_blank" rel="noopener"' %}{% else %}{% assign post_link = post.url | relative_url %}{% assign post_target = '' %}{% endif %}
+    <div class="article-list-item">
+      <div class="ali-content">
+        <div class="ali-cat">{{ post.category }}</div>
+        <h3 class="ali-title"><a href="{{ post_link }}" {{ post_target }}>{{ post.title }}</a></h3>
+        <p class="ali-excerpt">{{ post.description }}</p>
+      </div>
+      <div class="ali-image">
+        {% if post.image %}<img src="{{ post.image | relative_url }}" alt="{{ post.title }}">{% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="col-sidebar">
+    <div class="sidebar-header">Also on the site</div>
+    <div class="sidebar-list">
+      <!-- Research papers first -->
+      {% for paper in site.data.research %}
+      <div class="sidebar-item">
+        <div class="s-cat">Research</div>
+        <div class="s-title"><a href="{{ paper.link }}" target="_blank" rel="noopener">{{ paper.title }}</a></div>
+      </div>
+      {% endfor %}
+      <!-- Then older posts -->
+      {% for post in older_posts %}
+      {% if post.external_url %}{% assign sb_link = post.external_url %}{% assign sb_target = 'target="_blank" rel="noopener"' %}{% else %}{% assign sb_link = post.url | relative_url %}{% assign sb_target = '' %}{% endif %}
+      <div class="sidebar-item">
+        <div class="s-cat">{{ post.category }}</div>
+        <div class="s-title"><a href="{{ sb_link }}" {{ sb_target }}>{{ post.title }}</a></div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

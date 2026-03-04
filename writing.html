@@ -1,0 +1,29 @@
+---
+layout: default
+title: Writing
+---
+
+<div class="page-header">
+  <h1 class="page-title">Writing</h1>
+  <div class="page-rule"></div>
+</div>
+
+<div class="filter-bar">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="AI in Practice">AI in Practice</button>
+  <button class="filter-btn" data-filter="Navigating a Fast-Moving Field">Navigating a Fast-Moving Field</button>
+  <button class="filter-btn" data-filter="Research">Research</button>
+  <button class="filter-btn" data-filter="Tula's Digest">Tula's Digest</button>
+</div>
+
+<div class="article-grid" id="article-grid">
+  {% for post in site.posts %}
+  {% if post.external_url %}{% assign post_link = post.external_url %}{% assign post_target = 'target="_blank" rel="noopener"' %}{% else %}{% assign post_link = post.url | relative_url %}{% assign post_target = '' %}{% endif %}
+  <article class="article-card" data-category="{{ post.category }}">
+    <div class="card-category">{{ post.category }}</div>
+    <h3 class="card-title"><a href="{{ post_link }}" {{ post_target }}>{{ post.title }}</a></h3>
+    <p class="card-excerpt">{{ post.description }}</p>
+    <div class="card-meta">{{ post.date | date: "%B %Y" }}</div>
+  </article>
+  {% endfor %}
+</div>

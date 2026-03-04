@@ -1,38 +1,22 @@
 # Site settings
-theme: minima  # This will ensure the basic Jekyll theme is available
 title: Tula Masterman
 email: tula@themastermans.com
-description: >-
-  Personal portfolio for Tula Masterman, featuring research papers, 
-  videos, blog posts, and more.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://tmasterman.github.io" # your site's production URL
-twitter_username: tula.masterman
-github_username:  tmasterman
+description: AI agent researcher and builder. Making complex systems accessible.
+baseurl: ""
+url: "https://tulamasterman.com"
+github_username: tmasterman
 
 # Build settings
+theme: minima
 markdown: kramdown
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag
 
-# Custom Settings
-subtitle: AI Solutions Leader & Applied Data Scientist
-experience_description: >-
-  For over five years, I've pursued my passion for data science and AI, including three years leading research and innovation initiatives. I've trained custom models for computer vision and natural language based tasks, and built generative AI solutions that pioneered innovative data pre-processing techniques and agent patterns using models from the world's leading providers like OpenAI, Meta, and Anthropic. 
-  <br><br>
-  I've collaborated with incredible researchers, technical teams, and partners like Microsoft to deliver high-impact solutions that solve complex business challenges. I've published research papers, written articles frequently selected as Editor's Picks in Towards Data Science, and created educational videos that have reached 10k+ industry professionals.
-  <br><br>
-  I'm all in on everything I do -- whether it's swimming across the Catalina Channel in the middle of the night, reading 50+ books a year, or building compelling AI solutions. I value discipline, accountability, and fearlessness. I am always eager to learn and believe that openly sharing knowledge, debating, and challenging assumptions drive innovation and growth.
+# Prevent Jekyll from auto-extracting excerpts
+excerpt_separator: "<!--more-->"
 
-
-# contact_description: >-
-#   I'm always interested in connecting with like-minded professionals. Feel free to reach out through any of the platforms below.
-
-# Collections
-# collections:
-#   research:
-#     output: true
+# Permalink structure for posts
+permalink: /writing/:title/
 
 # Exclude from processing
 exclude:
@@ -42,7 +26,7 @@ exclude:
   - vendor
   - .sass-cache
   - .jekyll-cache
-  - gemfiles
+  - mockups/
   - vendor/bundle/
   - vendor/cache/
   - vendor/gems/

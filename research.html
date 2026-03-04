@@ -1,0 +1,26 @@
+---
+layout: default
+title: Research
+---
+
+<div class="page-header">
+  <h1 class="page-title">Research</h1>
+  <div class="page-rule"></div>
+</div>
+
+<div class="research-list">
+  {% for paper in site.data.research %}
+  <div class="research-entry">
+    {% if paper.image %}
+    <div class="research-entry-image">
+      <img src="{{ paper.image | relative_url }}" alt="{{ paper.title }}">
+    </div>
+    {% endif %}
+    <div class="research-entry-content">
+      <h3 class="research-entry-title">{{ paper.title }}</h3>
+      <p class="research-entry-desc">{{ paper.description }}</p>
+      <a href="{{ paper.link }}" class="btn" target="_blank" rel="noopener">View on arXiv →</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>

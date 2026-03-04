@@ -3,42 +3,51 @@
 
 @use "sass:color";
 
-// Variables
-$primary-color: #2c5282; // Deep blue
-$secondary-color: #7b1fa2; // Burgundy accent
-$tertiary-color: #2e7d32; // Green accent (as an alternative)
-$text-color: #333333;
-$light-color: #ffffff;
-$light-bg: #f8f9fa;
-$light-bg-alt: #f0f2f5; // Alternate light background
-$dark-bg: #1a202c;
+// =====================
+// Brand Variables
+// =====================
+$burgundy:     #722F37;
+$warm-gold:    #B8965A;
+$deep-brown:   #2A1F1F;
+$ivory:        #FDFAF6;
+$warm-cream:   #F7F1E8;
+$warm-gray:    #8A7B70;
+$soft-border:  #E8DDD0;
+
+$font-display: 'Playfair Display', Georgia, serif;
+$font-body:    'Jost', system-ui, sans-serif;
+
 $transition: all 0.3s ease;
 
-// General Styles
+// =====================
+// Base
+// =====================
 body {
-  font-family: 'Raleway', sans-serif;
-  color: $text-color;
+  font-family: $font-body;
+  font-weight: 400;
+  color: $deep-brown;
   line-height: 1.6;
+  background-color: $ivory;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; // Prevent horizontal scroll
+  overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6, .section-title, .site-brand .brand-link {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-display;
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 .portfolio-container {
   width: 100%;
   margin: 0 auto;
-  overflow-x: hidden; // Ensure no overflow
+  overflow-x: hidden;
 }
 
 .section-container {
-  padding: 30px 20px; // Reduced padding
-  max-width: 1200px; // Increased from 1100px
+  padding: 30px 20px;
+  max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
   width: 100%;
@@ -46,116 +55,68 @@ h1, h2, h3, h4, h5, h6, .section-title, .site-brand .brand-link {
 
 .section-title {
   text-align: center;
-  color: $primary-color;
-  margin-bottom: 25px; // Reduced from 40px
+  font-family: $font-display;
+  font-weight: 400;
+  color: $deep-brown;
+  margin-bottom: 25px;
   position: relative;
-  
+
   &:after {
     content: '';
     display: block;
-    width: 60px;
-    height: 3px;
-    background: $secondary-color;
-    margin: 8px auto; // Reduced from 10px
+    width: 50px;
+    height: 1px;
+    background: $warm-gold;
+    margin: 10px auto;
   }
 }
 
+// =====================
+// Buttons
+// =====================
 .btn {
   display: inline-block;
-  padding: 8px 18px; // Slightly reduced
-  border-radius: 4px;
+  padding: 8px 20px;
+  border-radius: 2px;
   text-decoration: none;
   transition: $transition;
-  font-weight: 600;
-  
+  font-family: $font-body;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
   &-primary {
-    background-color: $primary-color;
-    color: $light-color;
-    
+    background-color: $burgundy;
+    color: $ivory;
+
     &:hover {
-      background-color: color.adjust($primary-color, $lightness: -10%);
+      background-color: color.adjust($burgundy, $lightness: 8%);
     }
   }
-  
+
   &-secondary {
-    background-color: $secondary-color;
-    color: $light-color;
-    
+    background-color: transparent;
+    color: $burgundy;
+    border: 1px solid $burgundy;
+
     &:hover {
-      background-color: color.adjust($secondary-color, $lightness: -10%);
+      background-color: $burgundy;
+      color: $ivory;
     }
   }
 }
 
-// Navigation - More compact
-.site-header {
-  background-color: $light-color;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 0;
-  @extend .full-width-section;
-  
-  .site-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0; // Reduced from 4px
-    height: 60px; // Fixed height for consistency
-    max-width: 1200px;
-    margin: 0 auto;
-    
-    .site-brand {
-      padding-left: 20px;
-      
-      .brand-link {
-        color: $primary-color;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 1.1rem; // Slightly reduced from 1.2rem
-        transition: $transition;
-        
-        &:hover {
-          color: $secondary-color;
-        }
-      }
-    }
-    
-    .nav-links {
-      display: flex;
-      padding-right: 20px;
-      
-      .nav-link {
-        margin-left: 15px; // Reduced from 20px
-        color: $primary-color;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 0.9rem; // Reduced from 0.95rem
-        padding: 8px 6px; // Add padding to create a better touch target
-        transition: $transition;
-        
-        &:hover, &.active {
-          color: $secondary-color;
-        }
-      }
-    }
-  }
-}
-
-// Add a subtle indicator for the active page
-.nav-link.active {
-  border-bottom: 2px solid $secondary-color;
-}
-
-// Full-width section base class
+// =====================
+// Full-width Section Base
+// =====================
 .full-width-section {
   width: 100vw;
   max-width: 100%;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
   padding: 0;
-  
+
   .section-container {
     padding: 35px 20px;
     max-width: 1200px;
@@ -165,12 +126,121 @@ h1, h2, h3, h4, h5, h6, .section-title, .site-brand .brand-link {
   }
 }
 
-// About section styles 
+// =====================
+// Navigation
+// =====================
+.site-header {
+  background-color: $ivory;
+  box-shadow: 0 1px 0 $soft-border;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0;
+  @extend .full-width-section;
+
+  .site-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .site-brand {
+      padding-left: 20px;
+
+      .brand-link {
+        color: $deep-brown;
+        text-decoration: none;
+        font-family: $font-display;
+        font-weight: 400;
+        font-size: 1.2rem;
+        letter-spacing: 0.01em;
+        transition: $transition;
+
+        .brand-first {
+          color: $deep-brown;
+        }
+
+        .brand-last {
+          color: $burgundy;
+          font-style: italic;
+        }
+
+        &:hover .brand-first {
+          color: $burgundy;
+        }
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      padding-right: 20px;
+
+      .nav-link {
+        margin-left: 15px;
+        color: $warm-gray;
+        text-decoration: none;
+        font-family: $font-body;
+        font-weight: 500;
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        padding: 8px 6px;
+        transition: $transition;
+
+        &:hover, &.active {
+          color: $deep-brown;
+        }
+      }
+    }
+  }
+}
+
+.nav-link.active {
+  border-bottom: 2px solid $burgundy;
+}
+
+// =====================
+// Hero / About Section
+// Light ivory with subtle burgundy ghost glow
+// =====================
 .about-section {
   @extend .full-width-section;
-  background: linear-gradient(to right, 
-                            color.adjust($primary-color, $lightness: 40%), 
-                            color.adjust($primary-color, $lightness: 45%));
+  background: $ivory;
+  position: relative;
+  overflow: hidden;
+
+  // Subtle burgundy glow — 5% opacity
+  &::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(114,47,55,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: 30px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(114,47,55,0.04) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .section-container {
+    position: relative;
+    z-index: 1;
+  }
 
   .profile-container {
     display: flex;
@@ -178,58 +248,72 @@ h1, h2, h3, h4, h5, h6, .section-title, .site-brand .brand-link {
     align-items: center;
     text-align: center;
     width: 100%;
-    max-width: 100%;
-    
+
     @media (min-width: 768px) {
       flex-direction: row;
       text-align: left;
     }
   }
-  
+
   .profile-image {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     overflow: hidden;
-    margin-bottom: 20px;
-    border: 5px solid $light-color;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 24px;
+    border: 3px solid $soft-border;
     flex-shrink: 0;
-    
+
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    
+
     @media (min-width: 768px) {
-      margin-right: 40px;
+      margin-right: 50px;
       margin-bottom: 0;
     }
   }
-  
+
   .profile-text {
     flex: 1;
-    max-width: 100%;
-    width: 100%;
+    color: $deep-brown;
     overflow-wrap: break-word;
     word-wrap: break-word;
-    word-break: break-word;
-    
+
     h1 {
-      color: $primary-color;
-      margin-bottom: 5px;
+      font-family: $font-display;
+      font-weight: 400;
+      font-size: 3rem;
+      margin-bottom: 8px;
+      line-height: 1.1;
+
+      .name-first {
+        color: $deep-brown;
+      }
+
+      .name-last {
+        color: $burgundy;
+        font-style: italic;
+      }
     }
-    
+
     .subtitle {
-      color: $secondary-color;
-      font-size: 1.2rem;
-      margin-bottom: 15px;
+      font-family: $font-body;
+      font-weight: 400;
+      color: $warm-gold;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 20px;
     }
-    
+
     .about-text {
-      max-width: 100%;
-      
+      color: $warm-gray;
+      font-size: 0.96rem;
+      line-height: 1.75;
+
       p {
         max-width: 100%;
       }
@@ -237,103 +321,117 @@ h1, h2, h3, h4, h5, h6, .section-title, .site-brand .brand-link {
   }
 }
 
-// Section 2: Skills & Experience
+// =====================
+// Skills Section
+// =====================
 .skills-section {
-  background-color: $light-bg;
+  background-color: $warm-cream;
   @extend .full-width-section;
-  
+
   .skills-container {
     display: flex;
     flex-direction: column;
-    
+
     @media (min-width: 768px) {
       flex-direction: row;
     }
   }
-  
+
   .skills-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px; // Reduced from 20px
-    margin-bottom: 25px; // Reduced from 30px
-    
+    gap: 15px;
+    margin-bottom: 25px;
+
     @media (min-width: 768px) {
-      width: 45%; // Increased from 40%
-      margin-right: 35px; // Reduced from 40px
+      width: 45%;
+      margin-right: 35px;
       margin-bottom: 0;
     }
   }
-  
+
   .skill-item {
     display: flex;
     align-items: center;
-    
+
     .skill-icon {
-      width: 36px; // Reduced from 40px
-      height: 36px; // Reduced from 40px
+      width: 36px;
+      height: 36px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: $light-color;
+      background-color: $soft-border;
       border-radius: 50%;
       margin-right: 10px;
-      color: $primary-color;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      
+      color: $burgundy;
+      flex-shrink: 0;
+
       i {
-        font-size: 1.3rem; // Reduced from 1.5rem
+        font-size: 1.2rem;
       }
     }
+
+    .skill-name {
+      font-family: $font-body;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: $deep-brown;
+    }
   }
-  
+
   .experience-text {
     flex: 1;
+    color: $warm-gray;
+    font-size: 0.96rem;
+    line-height: 1.75;
   }
 }
 
-// Section 3: Videos (moved before Research)
+// =====================
+// Videos Section
+// =====================
 .videos-section {
-  background-color: $light-bg-alt; // Different background
+  background-color: $ivory;
   @extend .full-width-section;
-  
+
   .video-slider {
     overflow-x: auto;
-    padding: 8px 0; // Reduced from 20px
-    
+    padding: 8px 0;
+
     &::-webkit-scrollbar {
-      height: 6px; // Reduced from 8px
+      height: 6px;
     }
-    
+
     &::-webkit-scrollbar-track {
-      background: #f1f1f1;
+      background: $soft-border;
     }
-    
+
     &::-webkit-scrollbar-thumb {
-      background: $primary-color;
+      background: $warm-gold;
       border-radius: 4px;
     }
   }
-  
+
   .video-container {
     display: flex;
-    gap: 15px; // Reduced from 20px
+    gap: 15px;
     min-width: min-content;
   }
-  
+
   .video-item {
-    min-width: 380px; // Increased from 350px
-    background-color: $light-color;
-    border-radius: 8px;
+    min-width: 380px;
+    background-color: $warm-cream;
+    border-radius: 2px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    margin-bottom: 10px; // Reduced from 15px
-    
+    border: 1px solid $soft-border;
+    margin-bottom: 10px;
+
     .video-embed {
       position: relative;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
-      
+
       iframe {
         position: absolute;
         top: 0;
@@ -343,277 +441,307 @@ h1, h2, h3, h4, h5, h6, .section-title, .site-brand .brand-link {
         border: none;
       }
     }
-    
+
     .video-title {
-      padding: 12px; // Reduced from 15px
+      padding: 12px;
       margin: 0;
-      color: $primary-color;
-      font-size: 1rem;
+      color: $deep-brown;
+      font-family: $font-display;
+      font-weight: 400;
+      font-size: 0.95rem;
     }
   }
 }
 
-// Section 4: Research
+// =====================
+// Research Section
+// =====================
 .research-section {
-  background-color: $light-color; // White background
+  background-color: $warm-cream;
   @extend .full-width-section;
-  
+
   .research-container {
     display: flex;
     flex-direction: column;
-    gap: 25px; // Reduced from 40px
+    gap: 25px;
   }
-  
+
   .research-item {
     display: flex;
     flex-direction: column;
-    background-color: $light-bg;
-    border-radius: 8px;
+    background-color: $ivory;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08); // Slightly reduced shadow
-    
+    border: 1px solid $soft-border;
+    border-left: 4px solid $burgundy;
+
     @media (min-width: 768px) {
       flex-direction: row;
     }
-    
+
     .research-image {
       width: 100%;
-      
+
       @media (min-width: 768px) {
         width: 30%;
       }
-      
+
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
     }
-    
+
     .research-content {
-      padding: 16px; // Reduced from 20px
+      padding: 20px;
       flex: 1;
-      
+
       .research-title {
-        color: $primary-color;
+        font-family: $font-display;
+        font-weight: 400;
+        color: $deep-brown;
         margin-top: 0;
-        margin-bottom: 10px; // Added explicit margin-bottom
+        margin-bottom: 10px;
       }
-      
+
       .research-description {
-        margin-bottom: 12px; // Added explicit margin
+        color: $warm-gray;
+        margin-bottom: 15px;
+        font-size: 0.95rem;
+        line-height: 1.7;
       }
     }
   }
 }
 
-// Section 5: Blog
+// =====================
+// Blog Section
+// =====================
 .blog-section {
-  background-color: $light-bg-alt; // Different background
+  background-color: $ivory;
   @extend .full-width-section;
-  
+
   .blog-container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px; // Reduced from 30px
-    
+    gap: 20px;
+
     @media (min-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
     }
   }
-  
+
   .blog-item {
-    background-color: $light-color;
-    border-radius: 8px;
+    background-color: $warm-cream;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border: 1px solid $soft-border;
+    border-left: 4px solid $warm-gold;
     transition: $transition;
-    
+
     &:hover {
-      transform: translateY(-5px);
+      border-left-color: $burgundy;
+      transform: translateY(-2px);
     }
-    
+
     .blog-image {
-      height: 180px; // Reduced from 200px
+      height: 180px;
       overflow: hidden;
-      
+
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         transition: $transition;
-        
+
         &:hover {
-          transform: scale(1.05);
+          transform: scale(1.04);
         }
       }
     }
-    
+
     .blog-content {
-      padding: 16px; // Reduced from 20px
-      
+      padding: 16px;
+
       .blog-title {
-        color: $primary-color;
+        font-family: $font-display;
+        font-weight: 400;
+        color: $deep-brown;
         margin-top: 0;
-        margin-bottom: 8px; // Added explicit margin
+        margin-bottom: 8px;
+        font-size: 1.05rem;
       }
-      
+
       .blog-description {
-        margin-bottom: 12px; // Added explicit margin
+        color: $warm-gray;
+        margin-bottom: 12px;
+        font-size: 0.9rem;
+        line-height: 1.6;
       }
     }
   }
 }
 
-// Section 6: Contact
+// =====================
+// Contact Section
+// =====================
 .contact-section {
-  background: linear-gradient(to right, $primary-color, color.adjust($primary-color, $lightness: -10%));
-  color: $light-color;
+  background-color: $deep-brown;
+  color: $ivory;
   @extend .full-width-section;
-  
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(114,47,55,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .section-container {
+    position: relative;
+    z-index: 1;
+  }
+
   .section-title {
-    color: $light-color;
-    
+    color: $ivory;
+
     &:after {
-      background-color: $light-color;
+      background-color: $warm-gold;
     }
   }
-  
+
   .contact-container {
     text-align: center;
     max-width: 700px;
     margin: 0 auto;
   }
-  
+
   .social-links {
     display: flex;
     justify-content: center;
-    gap: 16px; // Reduced from 20px
-    margin-top: 25px; // Reduced from 30px
-    
+    gap: 16px;
+    margin-top: 25px;
+
     .social-icon {
-      width: 45px; // Reduced from 50px
-      height: 45px; // Reduced from 50px
+      width: 45px;
+      height: 45px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: rgba(255,255,255,0.1);
+      background-color: rgba(253,250,246,0.08);
+      border: 1px solid rgba(253,250,246,0.2);
       border-radius: 50%;
-      color: $light-color;
-      font-size: 1.4rem; // Reduced from 1.5rem
+      color: $ivory;
+      font-size: 1.3rem;
       transition: $transition;
-      
+
       &:hover {
-        background-color: $secondary-color;
-        transform: translateY(-5px);
+        background-color: $burgundy;
+        border-color: $burgundy;
+        transform: translateY(-4px);
       }
     }
   }
 }
 
-// Footer - More Compact
+// =====================
+// Footer
+// =====================
 .site-footer {
-  background-color: $dark-bg;
-  color: $light-color;
+  background-color: $deep-brown;
+  border-top: 1px solid rgba(253,250,246,0.1);
+  color: rgba(253,250,246,0.45);
   text-align: center;
   @extend .full-width-section;
-  
+
   .section-container {
-    padding: 2px;
-    font-size: 0.85rem;
+    padding: 14px 20px;
+    font-family: $font-body;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
   }
 }
 
-// Mobile responsiveness - all styles for screens under 768px
+// =====================
+// Mobile Responsiveness
+// =====================
 @media (max-width: 767px) {
-  // // Navigation adjustments
-  // .site-header .site-nav {
-  //   height: 50px; // Even more compact on mobile
-    
-  //   .site-brand .brand-link {
-  //     font-size: 1rem;
-  //   }
-    
-  //   .nav-links .nav-link {
-  //     font-size: 0.8rem;
-  //     margin-left: 10px;
-  //     padding: 6px 4px;
-  //   }
-  // }
-
-  // Navigation adjustments
   .site-header .site-nav {
-    flex-direction: column; // Stack vertically on very small screens
-    height: auto; // Allow height to adjust based on content
+    flex-direction: column;
+    height: auto;
     padding: 2px 0;
-    
+
     .site-brand {
       padding-left: 0;
       margin-bottom: 2px;
-      
+
       .brand-link {
-        font-size: 1rem;
+        font-size: 1.05rem;
       }
     }
-    
+
     .nav-links {
       padding-right: 0;
       width: 100%;
       justify-content: center;
-      
+
       .nav-link {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         margin-left: 5px;
         margin-right: 5px;
         padding: 6px 4px;
       }
     }
-  }  
-  
-  // Section container adjustments
+  }
+
   .section-container {
-    padding: 25px 15px; // Further reduced from 30px
+    padding: 25px 15px;
   }
-  
-  // Video adjustments
+
   .video-item {
-    min-width: 100%; // Make videos full width on mobile
+    min-width: 100%;
   }
-  
-  // Other mobile adjustments
+
   .blog-container {
-    gap: 15px; // Further reduced on mobile
+    gap: 15px;
   }
-  
+
   .research-container {
-    gap: 20px; // Further reduced on mobile
+    gap: 20px;
   }
-  
-  // About section adjustments
+
   .profile-container {
     text-align: center;
   }
-  
+
   .profile-image {
-    margin: 0 auto 15px; // Reduced from 20px
+    margin: 0 auto 20px;
   }
-  
-  // Skills section mobile tweaks
+
+  .about-section .profile-text h1 {
+    font-size: 2.2rem;
+  }
+
   .skills-list {
-    margin-bottom: 20px; // Reduced for mobile
+    margin-bottom: 20px;
   }
-  
-  // Reduce section title margin on mobile
+
   .section-title {
-    margin-bottom: 20px; // Reduced from 25px
+    margin-bottom: 20px;
   }
 }
 
-// Extra small screens (phones in portrait)
+// Extra small screens
 @media (max-width: 374px) {
   .site-header .site-nav .nav-links {
-    flex-wrap: wrap; // Allow wrapping on very small screens
-    
+    flex-wrap: wrap;
+
     .nav-link {
       margin: 2px 4px;
     }
