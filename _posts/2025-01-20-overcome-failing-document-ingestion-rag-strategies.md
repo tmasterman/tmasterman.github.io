@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Overcome Failing Document Ingestion & RAG Strategies with Agentic Knowledge Distillation"
-date: 2025-02-02
+date: 2025-03-05
 category: "AI in Practice"
 description: "This piece introduces the Pyramid Approach, an agentic knowledge distillation technique that transforms messy source documents into structured, retrieval-ready knowledge."
 image: /assets/images/pyramid-blog.png
