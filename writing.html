@@ -13,7 +13,7 @@ title: Writing
   <button class="filter-btn" data-filter="AI in Practice">AI in Practice</button>
   <button class="filter-btn" data-filter="Navigating a Fast-Moving Field">Navigating a Fast-Moving Field</button>
   <button class="filter-btn" data-filter="Research">Research</button>
-  <button class="filter-btn" data-filter="Tula's Digest">Tula's Digest</button>
+  <button class="filter-btn" data-filter="AI Between Friends">AI Between Friends</button>
 </div>
 
 <div class="article-grid" id="article-grid">
@@ -23,7 +23,7 @@ title: Writing
     <div class="card-category">{{ post.category }}</div>
     <h3 class="card-title"><a href="{{ post_link }}" {{ post_target }}>{{ post.title }}</a></h3>
     <p class="card-excerpt">{{ post.description }}</p>
-    <div class="card-meta">{{ post.date | date: "%B %Y" }}</div>
+    <div class="card-meta">{{ post.date | date: "%B %-d, %Y" }}</div>
   </article>
   {% endfor %}
 </div>
