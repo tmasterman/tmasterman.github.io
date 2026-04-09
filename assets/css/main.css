@@ -987,6 +987,13 @@ footer {
   gap: 12px;
 }
 
+.footer-social .footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 12px 32px;
+  align-content: start;
+}
+
 .footer-links a {
   font-size: 13px;
   font-weight: 300;
@@ -1193,6 +1200,7 @@ footer {
     text-align: center;
   }
   .footer-social .footer-links {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
